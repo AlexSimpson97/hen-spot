@@ -282,7 +282,7 @@ textarea::placeholder {
 }
 
 textarea:focus + label,
-textarea:not(:placeholder-shown) + label {
+textarea.has-content + label {
     opacity: 0;
 }
 

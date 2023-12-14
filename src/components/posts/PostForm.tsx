@@ -10,6 +10,11 @@ export default function PostForm({ handleSubmitPost }: { handleSubmitPost: (post
     function handleUserInput(event: React.ChangeEvent<HTMLTextAreaElement>) {
         const updatedText : string = event.target.value;
         userText.length < USERTEXT_MAX_CHARACTERS ? setUserText(updatedText) : setUserText((currentText) => (currentText.slice(0, -1)));
+        if (event.target.value) {
+            event.target.classList.add('has-content');
+        } else {
+            event.target.classList.remove('has-content');
+        }
         return;
     }
 

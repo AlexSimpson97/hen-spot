@@ -34,17 +34,17 @@ function App() {
 
             if (newPost.initial && newPost.initial.length > 0) {
               setUserPosts((prevPosts: UserPost[]) => [newPost, ...prevPosts]);
-              // try {
-              //   await fetch("https://henshall-spot.vercel.app/api/posts", {
-              //     method: "POST",
-              //     headers: {
-              //       "Content-Type": "application/json",
-              //     },
-              //     body: JSON.stringify(newPost),
-              //   });
-              // } catch (error) {
-              //   console.error("Failed to send the post to the server:", error);
-              // }
+              try {
+                await fetch("https://henshall-spot.vercel.app/api/posts", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(newPost),
+                });
+              } catch (error) {
+                console.error("Failed to send the post to the server:", error);
+              }
             } else {
               toast.error("Please add your name:<FirstName> to the end of your post. 👇🏾");
             }

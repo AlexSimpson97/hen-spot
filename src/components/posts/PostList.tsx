@@ -9,6 +9,7 @@ export default function PostList({ userPosts }: { userPosts: UserPost[] }) {
             {userPosts.map(
                 ({ id, initial, topic, content, votes, timeSincePost }) => (
                     <PostItem
+                        id={id}
                         key={id}
                         initial={initial}
                         topic={topic}
